@@ -56,8 +56,8 @@ body{
 /* Hover effect for links */
 #navbar ul li a:hover {
     background-color: #001858;
-    /* text-decoration: underline; */
-    padding: 0.5rem;
+    /* text-decoration: underline;*/
+    padding: 0.5rem; 
 }
 
 
