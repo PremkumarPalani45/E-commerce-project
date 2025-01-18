@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f46b45, #eea849);
+    color: #333;
+    text-align: center;
+    padding: 20px;
+  }
+
+
+  input[type="radio"]{
+      background-color: gray;
+  }
+
+.form-body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #ed8a8a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+.form-container{
+    background: linear-gradient(135deg, #ffd89b, #fbc2eb);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Signin and Signup Forms */
+  /* .form {
+    display: none; 
+  }
+  
+  /* Show active form when radio button is checked */
+  /*#login:checked ~ .signin-form,
+  #signup:checked ~ .signup-form {
+    display: block; /* Display the selected form */
+}
+  
+form {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap:1rem;
+    border-radius: 2rem;
+    
+  }
+
+  input[type="text"],
+  input[type="email"],
+input[type="password"]{
+
+    border-radius: 0.3rem;
+    
+    width: 100%;
+    box-sizing: border-box;
+     padding: 10px; /* Increase padding for larger size */
+  font-size: 16px;  
+  }
+
+  form button{
+    background-color: #333;
+    color: white;
+    width: 100%;
+    /* box-sizing: border-box; */
+ padding: 10px; 
+  font-size: 16px;  
+  }
+
+  form button:hover{
+    background-color: #f46b45;
+  }
+
+
+/*
+.form {
+    display: none;
+  }
+  
+  /* Show Log In form when Log In radio is selected */
+  /* #logIn:checked ~ .forms #logInForm {
+    display: block;
+  }
+  
+  /* Show Sign Up form when Sign Up radio is selected */
+  /* #signUp:checked ~ .forms #signUpForm {
+    display: block;
+  } */ 
