@@ -9,6 +9,7 @@ body {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
     height: 100%;
+    text-align: center;
 }
 
 .card:hover {
@@ -41,6 +42,7 @@ body {
 
 .card-text {
     color: #666;
+    text-align: left;
 }
 
 .btn {
@@ -51,4 +53,29 @@ body {
 h1 {
     text-align: center;
     margin-top: 40px;
+}
+
+#filter-items{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+#filter-items #search{
+    width: 65%;
+}
+
+#filter-items #dropdown{
+    width: 30%;
+}
+
+.product-item-action{
+    display: flex;
+    justify-content: space-between;
+}
+
+.quantity-input{
+    width:50px;
+    text-align: center;
+
 }

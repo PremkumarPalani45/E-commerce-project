@@ -1,5 +1,4 @@
-const products = [
-    {
+ [ {
         "name": "Premium Leather Bag",
         "description": "Handcrafted leather bag with multiple compartments and adjustable strap. Ideal for daily use or travel.",
         "price": 129.99,
@@ -48,5 +47,4 @@ const products = [
         "image": "https://placehold.co/400x300/f1c1b9/white?text=Chef's+Knife"
     }
 ]
-
 

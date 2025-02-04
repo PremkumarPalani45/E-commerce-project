@@ -48,38 +48,38 @@
         //     }
         // });
 
-        function initializeCart() {
-            // Clear the localstorage
-            // localStorage.clear(); 
-            console.log(products);
+//         function initializeCart() {
+//             // Clear the localstorage
+//             // localStorage.clear(); 
+//             console.log(products);
 
-            // Define initial cart items
-            const initialCart = [
+//             // Define initial cart items
+//             const initialCart = [
 
-{ id: 1, name: 'Laptop', price: 1200.00, quantity: 1, image: "../Resources/laptop.jpg" },
+// { id: 1, name: 'Laptop', price: 1200.00, quantity: 1, image: "../Resources/laptop.jpg" },
 
-{ id: 2, name: 'Headphones', price: 150.00, quantity: 1, image: "../Resources/headphone.jpg" },
+// { id: 2, name: 'Headphones', price: 150.00, quantity: 1, image: "../Resources/headphone.jpg" },
 
-{ id: 3, name: 'Mouse', price: 25.00, quantity: 1, image: "../Resources/Mouse.jpg" },
+// { id: 3, name: 'Mouse', price: 25.00, quantity: 1, image: "../Resources/Mouse.jpg" },
 
-{ id: 4, name: 'Airpods', price: 120.00, quantity: 1, image: "../Resources/airpod.jpg" },
+// { id: 4, name: 'Airpods', price: 120.00, quantity: 1, image: "../Resources/airpod.jpg" },
 
-{ id: 5, name: 'Cable', price: 10.00, quantity: 1, image: "../Resources/cable.jpg" },
+// { id: 5, name: 'Cable', price: 10.00, quantity: 1, image: "../Resources/cable.jpg" },
 
-{ id: 6, name: 'Keyboard', price: 50.00, quantity: 1, image: "../Resources/keyboard.jpg" },
+// { id: 6, name: 'Keyboard', price: 50.00, quantity: 1, image: "../Resources/keyboard.jpg" },
 
-{ id: 7, name: 'Cable', price: 10.00, quantity: 1, image: "../Resources/cable.jpg" },
+// { id: 7, name: 'Cable', price: 10.00, quantity: 1, image: "../Resources/cable.jpg" },
 
-{ id: 8, name: 'Keyboard', price: 50.00, quantity: 1, image: "../Resources/keyboard.jpg" }
+// { id: 8, name: 'Keyboard', price: 50.00, quantity: 1, image: "../Resources/keyboard.jpg" }
 
-];
+// ];
 
-            // Check if the cart is already in localStorage
-            if (!localStorage.getItem('cart')) {
-                // If not, store the initial cart items in localStorage
-                localStorage.setItem('cart', JSON.stringify(initialCart));
-            }
-        }
+//             // Check if the cart is already in localStorage
+//             if (!localStorage.getItem('cart')) {
+//                 // If not, store the initial cart items in localStorage
+//                 localStorage.setItem('cart', JSON.stringify(initialCart));
+//             }
+//         }
 
         document.addEventListener('DOMContentLoaded', () => {
             initializeCart();
