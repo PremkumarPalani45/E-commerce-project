@@ -21,7 +21,7 @@
         </div>
     </div>
    
-    <script src="products.js"></script>
+    <!-- <script src="products.js"></script> -->
     <script>
         // document.addEventListener('DOMContentLoaded', function() {
         //     const cartList = document.getElementById('cart-list');
@@ -82,14 +82,14 @@
 //         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            initializeCart();
+            // initializeCart();
             const cartList = document.getElementById('cart-list');
             const cartTotalElement = document.getElementById('card-amount');
             const checkoutButton = document.getElementById('cart-checkout');
 
             // // Function to load cart items from localStorage and display them in the cart
             function loadCartItems() {
-                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cart = JSON.parse(localStorage.getItem('E-cart')) || [];
                 if (cart.length > 0) {
                      cartList.innerHTML = ''; // Clear any existing items
 
