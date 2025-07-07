@@ -72,9 +72,12 @@ body{
     background-color: #001858;
     filter: blur(2px); 
       animation: blurToNormal 1.5s ease forwards; /* Apply animation */
-
+    
     text-align: center;
     padding: 3%;
+    border: 10px solid transparent;
+    padding: 40px;
+    border-image: url(./resources/border.jpg) 30 round;
 }
 @keyframes blurToNormal {
     0% {
@@ -280,7 +283,7 @@ table{
     border: 2px red solid;
 }
     
-table th{
+ th{
     background-color: red;
     color:white;
     padding:1rem;
@@ -288,7 +291,7 @@ table th{
     /* border-collapse: collapse;
 } */
 }
-table td{
+ td{
     background-color: white;
     color:black;
     padding: 1.5rem;
@@ -376,4 +379,19 @@ table td{
       100% {
           opacity: 0;
       }
+  }
+
+
+
+  @media (max-width: 768px) {
+    .grid {
+        flex-direction: column;
+  }
+}
+  
+  /* Adjusting grid columns for mobile devices */
+  @media (max-width: 480px) {
+    .grid {
+        flex-direction: column;
+  }
   }

@@ -12,149 +12,91 @@
         <h1 class="mb-4">Shopping Cart</h1>
 
         <div id="cart-list" class="row">
-            <!-- cart cards will be dynamically added here -->
+            <!-- Cart cards will be dynamically added here -->
         </div>
-        <div class="cart-summary">
-            <p id="card-amount">Total : $0.00</p>
-            <button id="cart-checkout">CheckOut</button>
 
+        <div class="cart-summary">
+            <p id="card-amount">Total: $0.00</p>
+            <button id="cart-checkout">Checkout</button>
         </div>
     </div>
-   
-    <!-- <script src="products.js"></script> -->
+
     <script>
-        // document.addEventListener('DOMContentLoaded', function() {
-        //     const cartList = document.getElementById('cart-list');
-        //     for (const cart of carts) {
-        //         const cardcart = document.createElement('div');
-        //         cardcart.classList.add('col-lg-3', 'col-md-4', 'col-sm-6', 'mb-4','cardcart'); // Adjusted column classes
- 
-        //         cardcart.innerHTML = `
-        //            <div class="card h-100"> <!-- Ensure cards are of equal height -->
-        //                 <img src="${cart.image}" class="card-img-top" alt="${cart.name}" width="300" 
-        //   height="200">
-        //                 <div class="card-body"> <!-- Use flexbox for vertical alignment -->
-        //                     <h5 class="card-title">${cart.name}</h5>
-        //                     <p class="card-text font-weight-bold">${cart.price.toFixed(2)}</p>
-        //                   <div class="cart-item-action">
-        //                    <input type="number" value="${cart.quantity}" min="1" class="quantity-input">
-        //                     <button class="btn btn-primary">Remove</button>
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //             </div>
-        //         `;
-        //         cartList.appendChild(cardcart);
-        //     }
-        // });
-
-//         function initializeCart() {
-//             // Clear the localstorage
-//             // localStorage.clear(); 
-//             console.log(products);
-
-//             // Define initial cart items
-//             const initialCart = [
-
-// { id: 1, name: 'Laptop', price: 1200.00, quantity: 1, image: "../Resources/laptop.jpg" },
-
-// { id: 2, name: 'Headphones', price: 150.00, quantity: 1, image: "../Resources/headphone.jpg" },
-
-// { id: 3, name: 'Mouse', price: 25.00, quantity: 1, image: "../Resources/Mouse.jpg" },
-
-// { id: 4, name: 'Airpods', price: 120.00, quantity: 1, image: "../Resources/airpod.jpg" },
-
-// { id: 5, name: 'Cable', price: 10.00, quantity: 1, image: "../Resources/cable.jpg" },
-
-// { id: 6, name: 'Keyboard', price: 50.00, quantity: 1, image: "../Resources/keyboard.jpg" },
-
-// { id: 7, name: 'Cable', price: 10.00, quantity: 1, image: "../Resources/cable.jpg" },
-
-// { id: 8, name: 'Keyboard', price: 50.00, quantity: 1, image: "../Resources/keyboard.jpg" }
-
-// ];
-
-//             // Check if the cart is already in localStorage
-//             if (!localStorage.getItem('cart')) {
-//                 // If not, store the initial cart items in localStorage
-//                 localStorage.setItem('cart', JSON.stringify(initialCart));
-//             }
-//         }
-
         document.addEventListener('DOMContentLoaded', () => {
-            // initializeCart();
             const cartList = document.getElementById('cart-list');
             const cartTotalElement = document.getElementById('card-amount');
             const checkoutButton = document.getElementById('cart-checkout');
 
-            // // Function to load cart items from localStorage and display them in the cart
             function loadCartItems() {
                 const cart = JSON.parse(localStorage.getItem('E-cart')) || [];
+                cartList.innerHTML = '';
+
                 if (cart.length > 0) {
-                     cartList.innerHTML = ''; // Clear any existing items
-
-                    cart.forEach((cart1, index) => {
+                    cart.forEach((cartItem, index) => {
                         const cardcart = document.createElement('div');
-                cardcart.classList.add('col-lg-3', 'col-md-4', 'col-sm-6', 'mb-4','cardcart'); // Adjusted column classes
- 
-                cardcart.innerHTML = `
-                   <div class="card h-100"> <!-- Ensure cards are of equal height -->
-                        <img src="${cart1.image}" class="card-img-top" alt="${cart1.name}" width="300" 
-          height="200">
-                        <div class="card-body"> <!-- Use flexbox for vertical alignment -->
-                            <h5 class="card-title">${cart1.name}</h5>
-                            <p class="card-text font-weight-bold">${cart1.price.toFixed(2)}</p>
-                          <div class="cart-item-action">
-                           <input type="number" value="${cart1.quantity}" min="1" class="quantity-input">
-                            <button class="btn btn-primary">Remove</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                `;
-                cartList.appendChild(cardcart);
+                        cardcart.classList.add('col-lg-3', 'col-md-4', 'col-sm-6', 'mb-4', 'cardcart');
 
-                        // Add event listeners
+                        cardcart.innerHTML = `
+                            <div class="card h-100">
+                                <img src="${cartItem.image}" class="card-img-top" alt="${cartItem.name}" width="300" height="200">
+                                <div class="card-body">
+                                    <h5 class="card-title">${cartItem.name}</h5>
+                                    <p class="card-text font-weight-bold">$${cartItem.price.toFixed(2)}</p>
+                                    <div class="cart-item-action">
+                                        <input type="number" value="${cartItem.quantity}" min="1" class="quantity-input">
+                                        <button class="btn btn-primary">Remove</button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+
+                        cartList.appendChild(cardcart);
+
                         const removeButton = cardcart.querySelector('.btn');
                         const quantityInput = cardcart.querySelector('.quantity-input');
 
                         removeButton.addEventListener('click', () => {
                             cart.splice(index, 1);
-                            localStorage.setItem('cart', JSON.stringify(cart));
+                            localStorage.setItem('E-cart', JSON.stringify(cart));
                             loadCartItems();
                         });
 
                         quantityInput.addEventListener('change', (event) => {
-                            cart1.quantity = parseInt(event.target.value);
-                            localStorage.setItem('cart', JSON.stringify(cart));
+                            cartItem.quantity = parseInt(event.target.value);
+                            localStorage.setItem('E-cart', JSON.stringify(cart));
                             updateCartTotal();
                         });
                     });
 
                     updateCartTotal();
                 } else {
-                    updateCartTotal();
                     cartList.innerHTML = '<p>Your cart is empty</p>';
+                    updateCartTotal();
                 }
             }
 
-            // Function to update the cart total
             function updateCartTotal() {
                 let total = 0;
-                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cart = JSON.parse(localStorage.getItem('E-cart')) || [];
                 cart.forEach(item => {
                     total += item.price * item.quantity;
                 });
                 cartTotalElement.textContent = `Total: $${total.toFixed(2)}`;
             }
 
-            // Initialize cart items
             loadCartItems();
 
-            // Handle checkout button click
             checkoutButton.addEventListener('click', () => {
-                alert('Proceeding to checkout');
-            });
+    const cart = JSON.parse(localStorage.getItem('E-cart')) || [];
+    if (cart.length === 0) {
+        alert('Your cart is empty! Add items before checking out.');
+    } else {
+        alert('Proceeding to checkout...');
+        // Optionally: Redirect to a checkout page
+        // window.location.href = 'checkout.html';
+    }
+});
+
         });
     </script>
 </body>
